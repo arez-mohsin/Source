@@ -111,7 +111,6 @@ calli.on("message", async message => {
     message.channel.send(help);
   }
 });
-const OwnerCode = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "rules") {
@@ -162,7 +161,6 @@ calli.on("message", message => {
     message.channel.send({ embed });
   }
 });
-const OwnerCode = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", async message => {
   if (message.content.startsWith(prefix + "invite")) {
@@ -183,7 +181,6 @@ calli.on("message", async message => {
     message.channel.send(help);
   }
 });
-const OwnerCode = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content.startsWith(`${prefix}botinfo`)) {
