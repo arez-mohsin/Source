@@ -56,8 +56,8 @@ calli.on("message", message => {
     }, cdtime * 1000);
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .Developers(calli)      //
-      .OwnerCode()
+      .Developers(calli)      
+      .OwnerCode(owner)
       .Bot()
       .setDescription(``)
       .setThumbnail(``)
@@ -74,7 +74,7 @@ const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
 const calliban      = "";
-const calliwarn     = "";                                                                                                                                                                                              const Developers = "callideveloper";
+const calliwarn     = ""; const Developers = "";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
