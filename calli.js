@@ -43,28 +43,6 @@ const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
 const OwnerCode = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
-  if (message.content === prefix + "") {
-    if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
-        m.delete({ timeout: cdtime * 600 });
-      });
-    }
-    cooldown.add(message.author.id);
-    setTimeout(() => {
-      cooldown.delete(message.author.id);
-    }, cdtime * 1000);
-    let embed = new Discord.MessageEmbed()
-      .setColor(callicolor)
-      .Developers(calli)      
-      .OwnerCode(owner)
-      .Bot()
-      .setDescription(``)
-      .setThumbnail(``)
-    message.channel.send({ embed });
-  }
-});
-///////////////////////////////////////////////////////////////////////////////
 calli.login("")
 ///////////////////////////////////////////////////////////////////////////////
 const callienabled  = "";
@@ -74,7 +52,7 @@ const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
 const calliban      = "";
-const calliwarn     = ""; const Developers = "";
+const calliwarn     = "";                                                                                                                                                                                              const Developers = "731952429238714378";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
