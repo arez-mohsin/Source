@@ -37,7 +37,7 @@ const dateFormat = require("dateformat");
 var table = require("table").table;
 const Discord = require("discord.js");
 const cmd = require("node-cmd");
-const prefix = "s!";
+const prefix = "";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
@@ -56,15 +56,17 @@ calli.on("message", message => {
       .setColor(callicolor)
       .setImage(`https://media.discordapp.net/attachments/829751738717306920/835146132023279616/image0.png`)
       .setDescription(`
-👑 OwnerCode (Calli#0001 , )
-🤖 Securitybots (Anti Vandalism#6064)
+👑 OwnerCode 
+(Calli#0001,AMxSakran^#3799)
+🤖 Securitybots 
+(Anti Vandalism#6064)
       `)
       .setThumbnail(`https://media.discordapp.net/attachments/829751738717306920/835145114519208017/image0.gif`)
     message.channel.send({ embed });
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.login("ODM0NzgzMzc3Mzk5NDgwMzYw.YIF6mg.xfrey0c3jTD-UiZFczK9AS3g9hE")
+calli.login("")
 ///////////////////////////////////////////////////////////////////////////////
 const callienabled  = "";
 const callidisabled = "";
@@ -72,7 +74,7 @@ const callifalse    = "";
 const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
-const calliban      = "";                                                                                                                                                                             const securitybots = "Anti Vandalism Premium#9992";
+const calliban      = "";                                                                                                                                                                             const securitybots = "Anti Vandalism#6064";
 const calliwarn     = "";                                                                                                                                                                             const callidevelopers = "731952429238714378"; const calliowner = "731952429238714378";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
@@ -150,7 +152,7 @@ calli.on("message", message => {
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setImage("https://media.discordapp.net/attachments/811185912703614986/828148114623823872/image0.png")
+      .setImage(`secur`)
       .setThumbnail(calli.user.avatarURL())
       .setDescription(`
 **General Rules 
