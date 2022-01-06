@@ -4,7 +4,7 @@ const app = express();
 const dreams = [
   "Find and count some sheep",
   "Climb a really tall mountain",
-  "Wash the dishes"
+  "Wash the dishes",
 ];
 app.use(express.static("public"));
 app.get("/", (request, response) => {
@@ -41,10 +41,10 @@ const prefix = "";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "owner") {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -54,40 +54,49 @@ calli.on("message", message => {
     }, cdtime * 1000);
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setImage(`https://media.discordapp.net/attachments/829751738717306920/835146132023279616/image0.png`)
-      .setDescription(`
+      .setImage(
+        `https://media.discordapp.net/attachments/829751738717306920/835146132023279616/image0.png`
+      )
+      .setDescription(
+        `
 👑 OwnerCode 
-(Calli#0001,AMxSakran^#3799)
+(Frozen |AREZ#1012 )
 🤖 Securitybots 
-(Anti Vandalism#6064)
-      `)
-      .setThumbnail(`https://media.discordapp.net/attachments/829751738717306920/835145114519208017/image0.gif`)
+(Source Bot#2755 )
+      `
+      )
+      .setThumbnail(
+        `https://media.discordapp.net/attachments/829751738717306920/835145114519208017/image0.gif`
+      );
     message.channel.send({ embed });
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.login("")
+calli.login(process.env.TOKEN);
 ///////////////////////////////////////////////////////////////////////////////
-const callienabled  = "";
+const callienabled = "";
 const callidisabled = "";
-const callifalse    = "";
-const callitrue     = "";
-const callicolor    = "";
-const calliimgae    = "";
-const calliban      = "";                                                                                                                                                                             const securitybots = "Anti Vandalism#6064";
-const calliwarn     = "";                                                                                                                                                                             const callidevelopers = "731952429238714378"; const calliowner = "731952429238714378";
+const callifalse = "";
+const callitrue = "";
+const callicolor = "BLACK";
+const calliimgae = "";
+const calliban = "";
+const securitybots = "Source Bot#2755 ";
+const calliwarn = "";
+const callidevelopers = "738127407482929352";
+const calliowner = "738127407482929352";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
   calli.user.setActivity(`${prefix}help`, {
-    Type: "Playing"
+    Type: "Playing",
   });
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", async message => {
+calli.on("message", async (message) => {
   if (message.content.startsWith(prefix + "help")) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -129,7 +138,7 @@ calli.on("message", async message => {
 \`${prefix}punishment\`
 
 **Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - [Website](https://security-bot4415.glitch.me/)
+[Support](https://discord.gg/stbq84yeBK) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - Website soon
       
       
       `);
@@ -137,10 +146,10 @@ calli.on("message", async message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "rules") {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -149,12 +158,13 @@ calli.on("message", message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
-      return message.channel.send("**You must have a higher role use this command**");
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setImage(`callilogo`)
-      .setThumbnail(calli.user.avatarURL())
-      .setDescription(`
+      .setThumbnail(calli.user.avatarURL()).setDescription(`
 **General Rules 
 
 >  1 . Be respectful. Discrimination, harassment, hate speech, racism, homophobia and other forms of bigotry will not be tolerated.
@@ -187,10 +197,10 @@ calli.on("message", message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", async message => {
+calli.on("message", async (message) => {
   if (message.content.startsWith(prefix + "invite")) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -198,19 +208,17 @@ calli.on("message", async message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    let help = new Discord.MessageEmbed()
-      .setColor(callicolor)
-      .setDescription(`
+    let help = new Discord.MessageEmbed().setColor(callicolor).setDescription(`
 [Click here](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) **to invite the bot.**
 `);
     message.channel.send(help);
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(`${prefix}botinfo`)) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -236,10 +244,10 @@ calli.on("message", message => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(prefix + "serverinfo")) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -261,10 +269,10 @@ calli.on("message", message => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", prof => {
+calli.on("message", (prof) => {
   if (prof.content.startsWith(prefix + "userinfo")) {
     if (cooldown.has(prof.author.id)) {
-      return prof.channel.send(`You have to wait 5 seconds`).then(m => {
+      return prof.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -287,10 +295,10 @@ calli.on("message", prof => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(prefix + "lock")) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -323,10 +331,10 @@ Not-Provided
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(prefix + "unlock")) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -360,10 +368,10 @@ Not-Provided
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "servers") {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -378,27 +386,28 @@ calli.on("message", message => {
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .addField("Guilds", `${calli.guilds.cache.size} Guilds`, true)
-      .addField("Users", `${calli.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users`, true)
+      .addField(
+        "Users",
+        `${calli.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users`,
+        true
+      )
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }));
     message.channel.send({ embed });
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", async message => {
+calli.on("message", async (message) => {
   if (
     message.author.bot ||
     !message.guild ||
     !message.content.startsWith(prefix)
   )
     return;
-  const args = message.content
-      .slice(prefix.length)
-      .trim()
-      .split(/ +/),
+  const args = message.content.slice(prefix.length).trim().split(/ +/),
     commandName = args.shift().toLowerCase();
   if (["ban", "kick"].includes(commandName)) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -417,7 +426,7 @@ calli.on("message", async message => {
       );
     let user = message.guild.member(
       message.mentions.users.first() ||
-        message.guild.members.cache.find(x => x.id == args[0])
+        message.guild.members.cache.find((x) => x.id == args[0])
     );
     if (!user) return message.channel.send("** Member not found!**");
     let bot = message.guild.member(calli.user);
@@ -453,11 +462,11 @@ calli.on("message", async message => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   let command = message.content.split(" ")[0];
   if (command == prefix + "unban") {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -466,13 +475,10 @@ calli.on("message", message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     if (!message.member.hasPermission("BAN_MEMBERS")) return;
-    let args = message.content
-      .split(" ")
-      .slice(1)
-      .join(" ");
+    let args = message.content.split(" ").slice(1).join(" ");
     if (args == "all") {
-      message.guild.fetchBans().then(zg => {
-        zg.forEach(JxA => {
+      message.guild.fetchBans().then((zg) => {
+        zg.forEach((JxA) => {
           message.guild.unban(JxA);
         });
       });
@@ -482,10 +488,10 @@ calli.on("message", message => {
       return message.channel.send("**Please Type the member ID / all**");
     message.guild
       .unban(args)
-      .then(m => {
+      .then((m) => {
         message.channel.send(`**🟢 Unban this member ${m.username}**`);
       })
-      .catch(stry => {
+      .catch((stry) => {
         message.channel.send(
           `**I can't find that person \`${args}\` in ban list**`
         );
@@ -493,35 +499,32 @@ calli.on("message", message => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   let commands = message.content.split(" ");
   if (commands[0] == prefix + "embed") {
     if (!message.guild) return;
     if (message.author.id !== message.guild.ownerID)
-      return message.reply("** **You must have a higher role use this command****");
-    if (!message.guild.member(calli.user).hasPermission("MANAGE_MESSAGES"))
       return message.reply(
-        "**You must have a higher role use this command**"
+        "** **You must have a higher role use this command****"
       );
-    var args = message.content
-      .split(" ")
-      .slice(1)
-      .join(" ");
+    if (!message.guild.member(calli.user).hasPermission("MANAGE_MESSAGES"))
+      return message.reply("**You must have a higher role use this command**");
+    var args = message.content.split(" ").slice(1).join(" ");
     if (!args) {
       return message.channel.send("`Usage : " + prefix + "embed <message>`");
     }
     message.delete();
     var embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setDescription(`${args}`)
+      .setDescription(`${args}`);
     message.channel.send(embed);
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("message", async message => {
+calli.on("message", async (message) => {
   if (message.content.startsWith(`<@${calli.user.id}>`)) {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -533,7 +536,7 @@ calli.on("message", async message => {
       .setColor(callicolor)
       .setAuthor(calli.user.username, calli.user.avatarURL())
       .setThumbnail(calli.user.avatarURL())
-      .setFooter('Thanks for adding security, I wish you luck!')
+      .setFooter("Thanks for adding security, I wish you luck!")
       .setDescription(`
 **Hello From Security**
 My Prefix is [${prefix}]
@@ -548,7 +551,7 @@ If there is, you can always join the support server by type ${prefix}support. or
   }
 });
 //////////////////////////////////////////////////////////////////////////////
-calli.on("guildCreate", guild => {
+calli.on("guildCreate", (guild) => {
   let embed = new Discord.MessageEmbed()
     .setColor(callicolor)
     .setDescription(`Thanks for adding security, I wish you luck!`);
@@ -556,10 +559,10 @@ calli.on("guildCreate", guild => {
   guild.owner.send(embed);
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "anti") {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -573,7 +576,8 @@ calli.on("message", message => {
       );
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setDescription(`
+      .setDescription(
+        `
 **Security Number**
 \`${prefix}anti kick\`: **Number**
 \`${prefix}anti ban\`: **Number**
@@ -589,7 +593,8 @@ calli.on("message", message => {
 \`${prefix}settings\`
 
 
-      `)
+      `
+      )
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }));
     message.channel.send({ embed });
   }
@@ -597,16 +602,13 @@ calli.on("message", message => {
 ///////////////////////////////////////////////////////////////////////////////
 let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./configg.json", "UTF8"));
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (!message.channel.guild) return;
   let user = anti[message.guild.id + message.author.id];
-  let num = message.content
-    .split(" ")
-    .slice(2)
-    .join(" ");
+  let num = message.content.split(" ").slice(2).join(" ");
   if (!anti[message.guild.id + message.author.id])
     anti[message.guild.id + message.author.id] = {
-      actions: 0
+      actions: 0,
     };
   if (!config[message.guild.id])
     config[message.guild.id] = {
@@ -616,16 +618,15 @@ calli.on("message", message => {
       kickLimits: 1,
       chaCrLimit: 1,
       roleCrLimits: 1,
-      time: 0.1
+      time: 0.1,
     };
 
   if (message.content.startsWith(prefix + "anti")) {
-      if (message.author.id !== message.guild.ownerID) {
+    if (message.author.id !== message.guild.ownerID) {
       let anti = new Discord.MessageEmbed()
         .setDescription("You must have a higher role use this command")
         .setColor(callicolor);
       return message.channel.send(anti);
- 
     }
     {
       let typeanum = new Discord.MessageEmbed()
@@ -655,7 +656,6 @@ Punish at: ${config[message.guild.id].banLimit} ${calliban}
               );
 
             message.channel.send(ban);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti kick")) {
@@ -674,7 +674,6 @@ Punish at: ${config[message.guild.id].kickLimits} ${calliban}
 `);
 
             message.channel.send(ban);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti roleD")) {
@@ -690,7 +689,6 @@ Warn at: ${config[message.guild.id].roleDelLimit} ${calliwarn}
 Punish at: ${config[message.guild.id].roleDelLimit} ${calliban} `);
 
             message.channel.send(roled);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti roleC")) {
@@ -706,7 +704,6 @@ Warn at: ${config[message.guild.id].roleCrLimits} ${calliwarn}
 Punish at: ${config[message.guild.id].roleCrLimits} ${calliban} `);
 
             message.channel.send(rolec);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti channelD")) {
@@ -722,7 +719,6 @@ Warn at: ${config[message.guild.id].chaDelLimit} ${calliwarn}
 Punish at: ${config[message.guild.id].chaDelLimit} ${calliban} `);
 
             message.channel.send(ban);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti channelC")) {
@@ -738,7 +734,6 @@ Warn at: ${config[message.guild.id].chaCrLimit} ${calliwarn}
 Punish at: ${config[message.guild.id].chaCrLimit} ${calliban} `);
 
             message.channel.send(ban);
-           
           }
         }
         if (message.content.startsWith(prefix + "anti time")) {
@@ -746,30 +741,27 @@ Punish at: ${config[message.guild.id].chaCrLimit} ${calliban} `);
           if (isNaN(num)) return message.channel.send(onlyanum);
           config[message.guild.id].time = num;
           {
-            let ban = new Discord.MessageEmbed()
-              .setColor(callicolor)
+            let ban = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
 Anti Time has been updated
 Enabled: ${callienabled}
 Warn at: ${config[message.guild.id].time} ${calliwarn} 
-Punish at: ${config[message.guild.id].time} ${calliban} `
-              );
+Punish at: ${config[message.guild.id].time} ${calliban} `);
 
             message.channel.send(ban);
-           
           }
         }
         fs.writeFile(
           "./configg.json",
           JSON.stringify(config, null, 2),
-          function(e) {
+          function (e) {
             if (e) throw e;
           }
         );
         fs.writeFile(
           "./antigreff.json",
           JSON.stringify(anti, null, 2),
-          function(e) {
+          function (e) {
             if (e) throw e;
           }
         );
@@ -778,12 +770,12 @@ Punish at: ${config[message.guild.id].time} ${calliban} `
   }
 });
 
-calli.on("channelCreate", async channel => {
+calli.on("channelCreate", async (channel) => {
   const entry1 = await channel.guild
     .fetchAuditLogs({
-      type: "CHANNEL_CREATE"
+      type: "CHANNEL_CREATE",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[channel.guild.id])
@@ -793,11 +785,11 @@ calli.on("channelCreate", async channel => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[channel.guild.id + entry.id]) {
     anti[channel.guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[channel.guild.id + entry.id].actions = "0";
@@ -817,7 +809,7 @@ calli.on("channelCreate", async channel => {
       channel.guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warncrchan = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -834,33 +826,37 @@ channel-create Members
           channel.guild.owner.send(warncrchan);
         });
       anti[channel.guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
 
-calli.on("channelDelete", async channel => {
+calli.on("channelDelete", async (channel) => {
   const entry1 = await channel.guild
     .fetchAuditLogs({
-      type: "CHANNEL_DELETE"
+      type: "CHANNEL_DELETE",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[channel.guild.id])
@@ -870,11 +866,11 @@ calli.on("channelDelete", async channel => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[channel.guild.id + entry.id]) {
     anti[channel.guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[channel.guild.id + entry.id].actions = "0";
@@ -894,7 +890,7 @@ calli.on("channelDelete", async channel => {
       channel.guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warndelchan = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -911,33 +907,37 @@ channel-delete Members
           channel.guild.owner.send(warndelchan);
         });
       anti[channel.guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
 
-calli.on("roleDelete", async channel => {
+calli.on("roleDelete", async (channel) => {
   const entry1 = await channel.guild
     .fetchAuditLogs({
-      type: "ROLE_DELETE"
+      type: "ROLE_DELETE",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[channel.guild.id])
@@ -947,11 +947,11 @@ calli.on("roleDelete", async channel => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[channel.guild.id + entry.id]) {
     anti[channel.guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[channel.guild.id + entry.id].actions = "0";
@@ -971,7 +971,7 @@ calli.on("roleDelete", async channel => {
       channel.guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warndelrole = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -988,33 +988,37 @@ role-delete Members
           channel.guild.owner.send(warndelrole);
         });
       anti[channel.guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
 
-calli.on("roleCreate", async channel => {
+calli.on("roleCreate", async (channel) => {
   const entry1 = await channel.guild
     .fetchAuditLogs({
-      type: "ROLE_CREATE"
+      type: "ROLE_CREATE",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[channel.guild.id])
@@ -1024,11 +1028,11 @@ calli.on("roleCreate", async channel => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[channel.guild.id + entry.id]) {
     anti[channel.guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[channel.guild.id + entry.id].actions = "0";
@@ -1048,7 +1052,7 @@ calli.on("roleCreate", async channel => {
       channel.guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warncrrole = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -1065,23 +1069,27 @@ role-create Members
           channel.guild.owner.send(warncrrole);
         });
       anti[channel.guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
@@ -1089,9 +1097,9 @@ role-create Members
 calli.on("guildBanAdd", async (guild, user) => {
   const entry1 = await guild
     .fetchAuditLogs({
-      type: "MEMBER_BAN_ADD"
+      type: "MEMBER_BAN_ADD",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[guild.id])
@@ -1101,11 +1109,11 @@ calli.on("guildBanAdd", async (guild, user) => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[guild.id + entry.id]) {
     anti[guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[guild.id + entry.id].actions = "0";
@@ -1122,7 +1130,7 @@ calli.on("guildBanAdd", async (guild, user) => {
       guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warnban1 = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -1139,23 +1147,27 @@ banning Members
           guild.owner.send(warnban1);
         });
       anti[guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
@@ -1163,9 +1175,9 @@ banning Members
 calli.on("guildKickAdd", async (guild, user) => {
   const entry1 = await guild
     .fetchAuditLogs({
-      type: "MEMBER_KICK"
+      type: "MEMBER_KICK",
     })
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   console.log(entry1.executor.username);
   const entry = entry1.executor;
   if (!config[guild.id])
@@ -1175,11 +1187,11 @@ calli.on("guildKickAdd", async (guild, user) => {
       roleDelLimit: 1,
       kickLimits: 1,
       chaCrLimit: 1,
-      roleCrLimits: 1
+      roleCrLimits: 1,
     };
   if (!anti[guild.id + entry.id]) {
     anti[guild.id + entry.id] = {
-      actions: 1
+      actions: 1,
     };
     setTimeout(() => {
       anti[guild.id + entry.id].actions = "0";
@@ -1196,7 +1208,7 @@ calli.on("guildKickAdd", async (guild, user) => {
       guild.members.cache
         .get(entry.id)
         .ban()
-        .catch(e => {
+        .catch((e) => {
           let warnkick1 = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
@@ -1213,36 +1225,40 @@ kicking Members
           guild.owner.send(warnkick1);
         });
       anti[guild.id + entry.id].actions = "0";
-      fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
-      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-        e
-      ) {
-        if (e) throw e;
-      });
+      fs.writeFile(
+        "./configg.json",
+        JSON.stringify(config, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
+      fs.writeFile(
+        "./antigreff.json",
+        JSON.stringify(anti, null, 2),
+        function (e) {
+          if (e) throw e;
+        }
+      );
     }
   }
 
-  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(e) {
+  fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function (e) {
     if (e) throw e;
   });
-  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
     if (e) throw e;
   });
 });
-calli.on("guildMemberRemove", async member => {
+calli.on("guildMemberRemove", async (member) => {
   const entry1 = await member.guild
     .fetchAuditLogs()
-    .then(audit => audit.entries.first());
+    .then((audit) => audit.entries.first());
   if (entry1.action === "MEMBER_KICK") {
     const entry2 = await member.guild
       .fetchAuditLogs({
-        type: "MEMBER_KICK"
+        type: "MEMBER_KICK",
       })
-      .then(audit => audit.entries.first());
+      .then((audit) => audit.entries.first());
     const entry = entry2.executor;
     if (!config[member.id])
       config[member.id] = {
@@ -1251,11 +1267,11 @@ calli.on("guildMemberRemove", async member => {
         roleDelLimit: 1,
         kickLimits: 1,
         chaCrLimit: 1,
-        roleCrLimits: 1
+        roleCrLimits: 1,
       };
     if (!anti[member.guild.id + entry.id]) {
       anti[member.guild.id + entry.id] = {
-        actions: 1
+        actions: 1,
       };
       setTimeout(() => {
         anti[member.guild.id + entry.id].actions = "0";
@@ -1275,7 +1291,7 @@ calli.on("guildMemberRemove", async member => {
         member.guild.members.cache
           .get(entry.id)
           .ban()
-          .catch(e => {
+          .catch((e) => {
             let warnban2 = new Discord.MessageEmbed()
               .setColor(callicolor)
               .setFooter(`security`).setDescription(`
@@ -1292,32 +1308,36 @@ banning Members
             guild.owner.send(warnban2);
           });
         anti[member.guild.id + entry.id].actions = "0";
-        fs.writeFile("./configg.json", JSON.stringify(config), function(e) {
+        fs.writeFile("./configg.json", JSON.stringify(config), function (e) {
           if (e) throw e;
         });
-        fs.writeFile("./antigreff.json", JSON.stringify(anti), function(e) {
+        fs.writeFile("./antigreff.json", JSON.stringify(anti), function (e) {
           if (e) throw e;
         });
       }
     }
 
-    fs.writeFile("./configg.json", JSON.stringify(config, null, 2), function(
-      e
-    ) {
-      if (e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
-      e
-    ) {
-      if (e) throw e;
-    });
+    fs.writeFile(
+      "./configg.json",
+      JSON.stringify(config, null, 2),
+      function (e) {
+        if (e) throw e;
+      }
+    );
+    fs.writeFile(
+      "./antigreff.json",
+      JSON.stringify(anti, null, 2),
+      function (e) {
+        if (e) throw e;
+      }
+    );
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "settings") {
     if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1332,8 +1352,7 @@ calli.on("message", message => {
     let embed = new Discord.MessageEmbed()
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
       .setColor(callicolor)
-      .setAuthor("Security Settings", "")
-      .setDescription(`
+      .setAuthor("Security Settings", "").setDescription(`
       
 **Anti Ban**
 Enabled: ${callienabled}
@@ -1375,10 +1394,10 @@ Ban: ${calliban}
 ///////////////////////////////////////////////////////////////////////////////
 let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8"));
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(prefix + "anti bot on")) {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1386,31 +1405,29 @@ calli.on("message", message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    let embed = new Discord.MessageEmbed()
-    .setColor(callicolor)
-    .setDescription(`
+    let embed = new Discord.MessageEmbed().setColor(callicolor).setDescription(`
 Anti Bot Has been updated 
 Enabled: ${callienabled}
-`)
+`);
     if (!message.channel.guild) return;
     if (message.author.id !== message.guild.ownerID) return;
     antibots[message.guild.id] = {
-      onoff: "On"
+      onoff: "On",
     };
     message.channel.send(embed);
-    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+    fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
       if (err)
-        console.error(err).catch(err => {
+        console.error(err).catch((err) => {
           console.error(err);
         });
     });
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content.startsWith(prefix + "anti bot off")) {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1418,49 +1435,47 @@ calli.on("message", message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    let embed = new Discord.MessageEmbed()
-    .setColor(callicolor)
-          .setDescription(
-        `
+    let embed = new Discord.MessageEmbed().setColor(callicolor).setDescription(
+      `
 Anti Bot Has been updated 
 Disabled: ${callidisabled}
 `
-      )
+    );
     if (!message.channel.guild) return;
     if (message.author.id !== message.guild.ownerID) return;
     antibots[message.guild.id] = {
-      onoff: "Off"
+      onoff: "Off",
     };
     message.channel.send(embed);
-    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+    fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
       if (err)
-        console.error(err).catch(err => {
+        console.error(err).catch((err) => {
           console.error(err);
         });
     });
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("guildMemberAdd", member => {
+calli.on("guildMemberAdd", (member) => {
   if (!antibots[member.guild.id])
     antibots[member.guild.id] = {
-      onoff: "Off"
+      onoff: "Off",
     };
   if (antibots[member.guild.id].onoff === "Off") return;
   if (member.user.bot) return member.kick();
 });
 
-fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
   if (err)
-    console.error(err).catch(err => {
+    console.error(err).catch((err) => {
       console.error(err);
     });
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "punishment") {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1469,7 +1484,9 @@ calli.on("message", message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
-      return message.channel.send("**You must have a higher role use this command**");
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setDescription(`Type a Punishment like **Kick** Or **Ban**`);
@@ -1477,10 +1494,10 @@ calli.on("message", message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "punishment ban") {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1489,7 +1506,9 @@ calli.on("message", message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
-      return message.channel.send("**You must have a higher role use this command**");
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setDescription(`Punishment has update to ban`);
@@ -1497,10 +1516,10 @@ calli.on("message", message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
-calli.on("message", message => {
+calli.on("message", (message) => {
   if (message.content === prefix + "punishment kick") {
-  if (cooldown.has(message.author.id)) {
-      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then((m) => {
         m.delete({ timeout: cdtime * 600 });
       });
     }
@@ -1509,7 +1528,9 @@ calli.on("message", message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
-      return message.channel.send("**You must have a higher role use this command**");
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setDescription(`Punishment has update to kick`);
@@ -1517,3 +1538,32 @@ calli.on("message", message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
+
+calli.on("guildCreate", (guild) => {
+  let channel = calli.channels.cache.get("926485820372840448");
+  let embed = new MessageEmbed()
+    .setColor("#303136")
+    .setAuthor(calli.user.username, calli.user.avatarURL())
+    .setTitle(`✅ Join Server`)
+    .setTimestamp()
+    .addField("**Server Name**", `${guild.name}`)
+    .addField("**Server Owner**", `<@${guild.ownerID}>`, true)
+    .addField("**Server Id**", `${guild.id}`)
+    .addField("**Member Count**", `${guild.memberCount}`)
+    .setFooter(`${calli.user.tag}`);
+  channel.send(embed);
+});
+calli.on("guildDelete", (guild) => {
+  let channel = calli.channels.cache.get("926485820372840448");
+  let embed = new MessageEmbed()
+    .setColor("#303136")
+    .setTimestamp()
+    .setAuthor(calli.user.username, calli.user.avatarURL())
+    .setTitle(`❌ Left Server`)
+    .addField("**Server Name**", `${guild.name}`)
+    .addField("**Server Owner**", `<@${guild.ownerID}>`, true)
+    .addField("**Server Id**", `${guild.id}`)
+    .addField("**Member Count**", `${guild.memberCount}`)
+    .setFooter(`${calli.user.tag}`);
+  channel.send(embed);
+});
