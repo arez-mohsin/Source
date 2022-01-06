@@ -37,7 +37,7 @@ const dateFormat = require("dateformat");
 var table = require("table").table;
 const Discord = require("discord.js");
 const cmd = require("node-cmd");
-const prefix = "";
+const prefix = "s!";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
@@ -55,7 +55,7 @@ calli.on("message", (message) => {
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setImage(
-        `https://media.discordapp.net/attachments/829751738717306920/835146132023279616/image0.png`
+        ``
       )
       .setDescription(
         `
@@ -66,7 +66,7 @@ calli.on("message", (message) => {
       `
       )
       .setThumbnail(
-        `https://media.discordapp.net/attachments/829751738717306920/835145114519208017/image0.gif`
+        ``
       );
     message.channel.send({ embed });
   }
