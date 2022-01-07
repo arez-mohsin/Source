@@ -54,9 +54,7 @@ calli.on("message", (message) => {
     }, cdtime * 1000);
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setImage(
-        ``
-      )
+      .setImage(``)
       .setDescription(
         `
 👑 OwnerCode 
@@ -65,9 +63,7 @@ calli.on("message", (message) => {
 (Source Bot#2755 )
       `
       )
-      .setThumbnail(
-        ``
-      );
+      .setThumbnail(``);
     message.channel.send({ embed });
   }
 });
