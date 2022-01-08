@@ -1564,3 +1564,26 @@ calli.on("guildDelete", (guild) => {
     .setFooter(`${calli.user.tag}`);
   channel.send(embed);
 });
+
+
+///////Button
+
+client.on("message", async (message) => {
+    if (message.content == "!button" && message.author.id === "Owner ID") { // Use this command only once and only on one channel.
+    let buttons = new disbut.MessageButton()
+        .setStyle('green') // Button Color
+        .setLabel('Test') // Button Name 
+        .setID('Button') // Button ID
+    message.channel.send('Message Text.', { buttons: [buttons] });
+    }
+    if (message.content == "!urlbutton" && message.author.id === "Owner ID") { // Use this command only once and only on one channel.
+    let buttons2 = new disbut.MessageButton()
+        .setStyle('url') // Button Url
+        .setLabel('Discord') // Button Name
+        .setURL('https://discord.com') // URL for forwarding
+        .setDisabled()
+    message.channel.send('Message Text.', { buttons: [buttons2] });
+    }
+});
+
+
