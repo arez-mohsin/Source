@@ -104,15 +104,16 @@ calli.on("message", async (message) => {
       .setColor(callicolor)
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
       .setDescription(`
-> **Info Commands** \`${prefix}botinfo\` \`${prefix}userinfo\` \`${prefix}serverinfo\` \`${prefix}invite\` \`${prefix}owner\`
+__**Preifx: ${prefix}**__
+> **Info Commands** \`botinfo\` \`userinfo\` \`serverinfo\` \`invite\` \`owner\`
 
-> **Moderation Commands** \`${prefix}lock\` \`${prefix}unlock\` \`${prefix}ban\` : @User \`${prefix}kick\` : @User \`${prefix}unban\` : Id/all
+> **Moderation Commands** \`lock\` \`unlock\` \`ban\` : @User \`kick\` : @User \`unban\` : Id/all
 
-> **Security Number** \`${prefix}anti kick\`: **Number** \`${prefix}anti ban\`: **Number** \`${prefix}anti channelD\`: **Number** \`${prefix}anti channelC\`: **Number** \`${prefix}anti roleD\`: **Number** \`${prefix}anti roleC\`: **Number**
+> **Security Number** \`anti kick\`: **Number** \`anti ban\`: **Number** \`anti channelD\`: **Number** \`anti channelC\`: **Number** \`anti roleD\`: **Number** \`anti roleC\`: **Number**
 
-> **Security On/Off** \`${prefix}anti bot\`: **on-off**
+> **Security On/Off** \`anti bot\`: **on-off**
 
-> **Security** \`${prefix}settings\` \`${prefix}punishment\`
+> **Security** \`settings\` \`punishment\`
 
 > **Links**
 [Support](https://discord.gg/stbq84yeBK) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - Website soon
@@ -298,8 +299,7 @@ calli.on("message", (message) => {
 Channel: <#${message.channel.id}>
 Moderator: <@${message.author.id}>
 
-**Reason**
-Not-Provided
+
           `
           )
           .setColor(callicolor);
@@ -334,9 +334,7 @@ calli.on("message", (message) => {
 Channel: <#${message.channel.id}>
 Moderator: <@${message.author.id}>
 
-**Reason**
-Not-Provided
-          
+         
           `
           )
           .setColor(callicolor);
@@ -513,16 +511,14 @@ calli.on("message", async (message) => {
       .setColor(callicolor)
       .setAuthor(calli.user.username, calli.user.avatarURL())
       .setThumbnail(calli.user.avatarURL())
-      .setFooter("Thanks for adding security, I wish you luck!")
+      .setFooter("Thanks for adding source")
       .setDescription(`
-**Hello From Security**
+**Hello From Source**
 My Prefix is [${prefix}]
-**About the bot**
-aprofessional moderation & security bot that can security your server
 **report a problem**
-If there is, you can always join the support server by type ${prefix}support. or DM a Developer. Developers you can message include Calli#0001
+If there is, you can always join the support server by type ${prefix}support. or DM a Developer. Developers you can message include Frozen |AREZ#1012
 **Extra Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - [Website](https://security-bot4415.glitch.me/)`);
+[Support](https://discord.gg/stbq84yeBK) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - [Website](https://security-bot4415.glitch.me/)`);
 
     message.channel.send(help);
   }
@@ -531,7 +527,7 @@ If there is, you can always join the support server by type ${prefix}support. or
 calli.on("guildCreate", (guild) => {
   let embed = new Discord.MessageEmbed()
     .setColor(callicolor)
-    .setDescription(`Thanks for adding security, I wish you luck!`);
+    .setDescription(`**Thanks for adding source, your server all time It's protected!**`);
 
   guild.owner.send(embed);
 });
@@ -555,19 +551,12 @@ calli.on("message", (message) => {
       .setColor(callicolor)
       .setDescription(
         `
-**Security Number**
-\`${prefix}anti kick\`: **Number**
-\`${prefix}anti ban\`: **Number**
-\`${prefix}anti channelD\`: **Number**
-\`${prefix}anti channelC\`: **Number**
-\`${prefix}anti roleD\`: **Number**
-\`${prefix}anti roleC\`: **Number**
+__**Prefix: ${prefix}**__
+**Security CmD** \`anti kick\`: **Number** \`anti ban\`: **Number** \`anti channelD\`: **Number** \`anti channelC\`: **Number** \`anti roleD\`: **Number** \`anti roleC\`: **Number**
 
-**Security On/Off**
-\`${prefix}anti bot\`: **on-off**
+**Security On/Off** \`anti bot\`: **on-off**
 
-**Security**
-\`${prefix}settings\`
+**Security** \`settings\`
 
 
       `
