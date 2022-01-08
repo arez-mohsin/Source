@@ -26,6 +26,7 @@ const convert = require("hh-mm-ss");
 const botversion = require("./package.json").version;
 const moment = require("moment");
 const fs = require("fs");
+const disbut = require('discord-buttons')(client);
 const util = require("util");
 const gif = require("gif-search");
 const ms = require("ms");
