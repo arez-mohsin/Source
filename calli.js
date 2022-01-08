@@ -37,7 +37,7 @@ const dateFormat = require("dateformat");
 var table = require("table").table;
 const Discord = require("discord.js");
 const cmd = require("node-cmd");
-const prefix = "s!";
+const prefix = "s";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
@@ -58,9 +58,9 @@ calli.on("message", (message) => {
       .setDescription(
         `
 👑 OwnerCode 
-(Frozen |AREZ#1012 )
+(Frozen |AREZ#1012)
 🤖 Securitybots 
-(Source Bot#2755 )
+(Source Bot#3324)
       `
       )
       .setThumbnail(``);
@@ -77,7 +77,7 @@ const callitrue = "";
 const callicolor = "BLACK";
 const calliimgae = "";
 const calliban = "";
-const securitybots = "Source Bot#2755 ";
+const securitybots = "Source Bot#3324";
 const calliwarn = "";
 const callidevelopers = "738127407482929352";
 const calliowner = "738127407482929352";
@@ -104,36 +104,17 @@ calli.on("message", async (message) => {
       .setColor(callicolor)
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
       .setDescription(`
-**Info Commands**
-\`${prefix}botinfo\`
-\`${prefix}userinfo\`
-\`${prefix}serverinfo\`
-\`${prefix}invite\`
-\`${prefix}owner\`
+> **Info Commands** \`${prefix}botinfo\` \`${prefix}userinfo\` \`${prefix}serverinfo\` \`${prefix}invite\` \`${prefix}owner\`
 
-**Moderation Commands**
-\`${prefix}lock\`
-\`${prefix}unlock\`
-\`${prefix}ban\` : @User
-\`${prefix}kick\` : @User
-\`${prefix}unban\` : Id/all
+> **Moderation Commands** \`${prefix}lock\` \`${prefix}unlock\` \`${prefix}ban\` : @User \`${prefix}kick\` : @User \`${prefix}unban\` : Id/all
 
-**Security Number**
-\`${prefix}anti kick\`: **Number**
-\`${prefix}anti ban\`: **Number**
-\`${prefix}anti channelD\`: **Number**
-\`${prefix}anti channelC\`: **Number**
-\`${prefix}anti roleD\`: **Number**
-\`${prefix}anti roleC\`: **Number**
+> **Security Number** \`${prefix}anti kick\`: **Number** \`${prefix}anti ban\`: **Number** \`${prefix}anti channelD\`: **Number** \`${prefix}anti channelC\`: **Number** \`${prefix}anti roleD\`: **Number** \`${prefix}anti roleC\`: **Number**
 
-**Security On/Off**
-\`${prefix}anti bot\`: **on-off**
+> **Security On/Off** \`${prefix}anti bot\`: **on-off**
 
-**Security**
-\`${prefix}settings\`
-\`${prefix}punishment\`
+> **Security** \`${prefix}settings\` \`${prefix}punishment\`
 
-**Links**
+> **Links**
 [Support](https://discord.gg/stbq84yeBK) - [Invite](https://discord.com/api/oauth2/authorize?client_id=${calli.user.id}&permissions=8&scope=bot) - Website soon
       
       
